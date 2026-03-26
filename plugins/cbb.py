@@ -1,11 +1,3 @@
-#
-# Copyright (C) 2025 by Codeflix-Bots@Github, < https://github.com/Codeflix-Bots >.
-#
-# This file is part of < https://github.com/Codeflix-Bots/FileStore > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Codeflix-Bots/FileStore/blob/master/LICENSE >
-#
-# All rights reserved.
 
 from pyrogram import Client 
 from bot import Bot
@@ -72,7 +64,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                         f"● {PRICE3}  For 1 Month Prime Membership\n\n"
                         f"● {PRICE4}  For 2 Months Prime Membership\n\n"
                         f"● {PRICE5}  For 3 Months Prime Membership\n\n\n"
-                        f"💵 Pay via UPI: <code>{UPI_ID}</code>\n\n"
+                        f"💵 Pay via UPI - <code>{UPI_ID}</code>\n\n"
                         f"♻️ After Payment You Will Get Instant Membership\n\n"
                         f"‼️ Must Send Screenshot after payment & If anyone want custom time membrship then ask admin"
                 ),
@@ -83,55 +75,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                         ]
                     )
                 )
-            else:
-                # If QR_PIC is not set, send just text
-                await client.send_message(
-                    chat_id=query.message.chat.id,
-                    text=(
-                        f"👋 **Hello {name}**\n\n"
-                        f"🎖️ **Available Plans :**\n\n"
-                        f"● `{PRICE1}`  For 3 Days Prime Membership\n\n"
-                        f"● `{PRICE2}`  For 7 Days Prime Membership\n\n"
-                        f"● `{PRICE3}`  For 1 Month Prime Membership\n\n"
-                        f"● `{PRICE4}`  For 2 Months Prime Membership\n\n"
-                        f"● `{PRICE5}`  For 3 Months Prime Membership\n\n\n"
-                        f"💵 **Pay via UPI:** `<code>{UPI_ID}</code>`\n\n"
-                        f"♻️ After payment, send screenshot to admin\n\n"
-                        f"‼️ Contact admin for custom plans"
-                    ),
-                    reply_markup=InlineKeyboardMarkup(
-                        [
-                            [InlineKeyboardButton("👤 Contact Admin", url=SCREENSHOT_URL)],
-                            [InlineKeyboardButton("🔒 Close", callback_data="close")]
-                        ]
-                    ),
-                    disable_web_page_preview=True
-                )
-        except Exception as e:
-            print(f"Error in premium callback: {e}")
-            # Fallback: send message without photo if there's an error
-            await client.send_message(
-                chat_id=query.message.chat.id,
-                text=(
-                    f"👋 Hello {name}\n\n"
-                    f"🎖️ Available Plans :\n\n"
-                    f"● {PRICE1}  For 3 Days Prime Membership\n\n"
-                    f"● {PRICE2}  For 7 Days Prime Membership\n\n"
-                    f"● {PRICE3}  For 1 Month Prime Membership\n\n"
-                    f"● {PRICE4}  For 2 Months Prime Membership\n\n"
-                    f"● {PRICE5}  For 3 Months Prime Membership\n\n\n"
-                    f"💵 Pay via UPI: <code>{UPI_ID}</code>\n\n"
-                    f"♻️ After Payment You Will Get Instant Membership\n\n"
-                    f"‼️ Must Send Screenshot after payment & If anyone want custom time membrship then ask admin"
-                ),
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [InlineKeyboardButton("👤 ADMIN 24/7", url=SCREENSHOT_URL)],
-                        [InlineKeyboardButton("🔒 Close", callback_data="close")]
-                    ]
-                ),
-                disable_web_page_preview=True
-            )
+
 
     elif data == "close":
         try:
