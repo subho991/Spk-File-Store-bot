@@ -15,6 +15,7 @@ from database.database import *
 
 @Bot.on_callback_query()
 async def cb_handler(client: Bot, query: CallbackQuery):
+
     data = query.data
 
     if data == "help":
@@ -22,7 +23,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             text=HELP_TXT.format(first=query.from_user.first_name),
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton("ʜᴏᴍᴇ", callback_data='/start'),
+                [InlineKeyboardButton("ʜᴏᴍᴇ", callback_data='start'),
                  InlineKeyboardButton("ᴄʟᴏꜱᴇ", callback_data='close')]
             ])
         )
@@ -43,59 +44,77 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("ʜᴇʟᴘ", callback_data='help'),
-                 InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data='about')]
+                 InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data='about'),
+                 InlineKeyboardButton("ᴘʀᴇᴍɪᴜᴍ", callback_data='premium')]
             ])
         )
 
-
-# Don't Remove Credit @CodeFlix_Bots, @rohit_1888
-# Ask Doubt on telegram @CodeflixSupport
-#
-# Copyright (C) 2025 by Codeflix-Bots@Github, < https://github.com/Codeflix-Bots >.
-#
-# This file is part of < https://github.com/Codeflix-Bots/FileStore > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Codeflix-Bots/FileStore/blob/master/LICENSE >
-#
-# All rights reserved.
-#
-
-
     elif data == "premium":
-        await query.message.delete()
-        await client.send_photo(
-            chat_id=query.message.chat.id,
-            photo=QR_PIC,
-            caption=(
-                f"👋 {query.from_user.username}\n\n"
-                f"🎖️ Available Plans :\n\n"
-                f"● {PRICE1}  For 3 Days Prime Membership\n\n"
-                f"● {PRICE2}  For 7 Days Prime Membership\n\n"
-                f"● {PRICE3}  For 1 Months Prime Membership\n\n"
-                f"● {PRICE4}  For 2 Months Prime Membership\n\n"
-                f"● {PRICE5}  For 3 Months Prime Membership\n\n\n"
-                f"💵 ASK UPI ID TO ADMIN AND PAY THERE -  <code>{UPI_ID}</code>\n\n\n"
-                f"♻️ After Payment You Will Get Instant Membership \n\n\n"
-                f"‼️ Must Send Screenshot after payment & If anyone want custom time membrship then ask admin"
-            ),
-            reply_markup=InlineKeyboardMarkup(
-                [
+        name = query.from_user.username or query.from_user.first_name
+        
+        # First, answer the callback to remove loading state
+        await query.answer()
+        
+        # Send premium details message first
+        try:
+            # Send new message with premium details
+            await client.send_message(
+                chat_id=query.message.chat.id,
+                text=(
+                    f"👋 **Hello {name}**\n\n"
+                    f"🎖️ **Available Plans :**\n\n"
+                    f"● `{PRICE1}`  For 3 Days Prime Membership\n\n"
+                    f"● `{PRICE2}`  For 7 Days Prime Membership\n\n"
+                    f"● `{PRICE3}`  For 1 Month Prime Membership\n\n"
+                    f"● `{PRICE4}`  For 2 Months Prime Membership\n\n"
+                    f"● `{PRICE5}`  For 3 Months Prime Membership\n\n\n"
+                    f"💵 **Pay via UPI:** `<code>{UPI_ID}</code>`\n\n"
+                    f"♻️ After payment, send screenshot to admin\n\n"
+                    f"‼️ Contact admin for custom plans"
+                ),
+                reply_markup=InlineKeyboardMarkup(
                     [
-                        InlineKeyboardButton(
-                            "ADMIN 24/7", url=(SCREENSHOT_URL)
-                        )
-                    ],
-                    [InlineKeyboardButton("🔒 Close", callback_data="close")],
-                ]
+                        [InlineKeyboardButton("👤 Contact Admin", url=SCREENSHOT_URL)],
+                        [InlineKeyboardButton("🔒 Close", callback_data="close")]
+                    ]
+                ),
+                disable_web_page_preview=True
             )
-        )
-
-
+            
+            # Now delete the original message
+            try:
+                await query.message.delete()
+            except Exception as e:
+                print(f"Error deleting message: {e}")
+                
+        except Exception as e:
+            print(f"Error sending premium message: {e}")
+            # If sending fails, edit the original message instead
+            await query.message.edit_text(
+                text=(
+                    f"👋 **Hello {name}**\n\n"
+                    f"🎖️ **Available Plans :**\n\n"
+                    f"● `{PRICE1}`  For 3 Days Prime Membership\n\n"
+                    f"● `{PRICE2}`  For 7 Days Prime Membership\n\n"
+                    f"● `{PRICE3}`  For 1 Month Prime Membership\n\n"
+                    f"● `{PRICE4}`  For 2 Months Prime Membership\n\n"
+                    f"● `{PRICE5}`  For 3 Months Prime Membership\n\n\n"
+                    f"💵 **Pay via UPI:** `<code>{UPI_ID}</code>`\n\n"
+                    f"♻️ After payment, send screenshot to admin\n\n"
+                    f"‼️ Contact admin for custom plans"
+                ),
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [InlineKeyboardButton("👤 Contact Admin", url=SCREENSHOT_URL)],
+                        [InlineKeyboardButton("🔒 Close", callback_data="close")]
+                    ]
+                ),
+                disable_web_page_preview=True
+            )
 
     elif data == "close":
-        await query.message.delete()
         try:
-            await query.message.reply_to_message.delete()
+            await query.message.delete()
         except:
             pass
 
@@ -118,25 +137,27 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             await query.answer("Failed to fetch channel info", show_alert=True)
 
     elif data.startswith("rfs_toggle_"):
-        cid, action = data.split("_")[2:]
-        cid = int(cid)
-        mode = "on" if action == "on" else "off"
+        parts = data.split("_")
+        if len(parts) >= 3:
+            cid = int(parts[2])
+            action = parts[3] if len(parts) > 3 else None
+            if action:
+                mode = "on" if action == "on" else "off"
+                await db.set_channel_mode(cid, mode)
+                await query.answer(f"Force-Sub set to {'ON' if mode == 'on' else 'OFF'}")
 
-        await db.set_channel_mode(cid, mode)
-        await query.answer(f"Force-Sub set to {'ON' if mode == 'on' else 'OFF'}")
-
-        # Refresh the same channel's mode view
-        chat = await client.get_chat(cid)
-        status = "🟢 ON" if mode == "on" else "🔴 OFF"
-        new_mode = "off" if mode == "on" else "on"
-        buttons = [
-            [InlineKeyboardButton(f"ʀᴇǫ ᴍᴏᴅᴇ {'OFF' if mode == 'on' else 'ON'}", callback_data=f"rfs_toggle_{cid}_{new_mode}")],
-            [InlineKeyboardButton("‹ ʙᴀᴄᴋ", callback_data="fsub_back")]
-        ]
-        await query.message.edit_text(
-            f"Channel: {chat.title}\nCurrent Force-Sub Mode: {status}",
-            reply_markup=InlineKeyboardMarkup(buttons)
-        )
+                # Refresh the same channel's mode view
+                chat = await client.get_chat(cid)
+                status = "🟢 ON" if mode == "on" else "🔴 OFF"
+                new_mode = "off" if mode == "on" else "on"
+                buttons = [
+                    [InlineKeyboardButton(f"ʀᴇǫ ᴍᴏᴅᴇ {'OFF' if mode == 'on' else 'ON'}", callback_data=f"rfs_toggle_{cid}_{new_mode}")],
+                    [InlineKeyboardButton("‹ ʙᴀᴄᴋ", callback_data="fsub_back")]
+                ]
+                await query.message.edit_text(
+                    f"Channel: {chat.title}\nCurrent Force-Sub Mode: {status}",
+                    reply_markup=InlineKeyboardMarkup(buttons)
+                )
 
     elif data == "fsub_back":
         channels = await db.show_channels()
