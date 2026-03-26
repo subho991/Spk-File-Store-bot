@@ -65,21 +65,21 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                     chat_id=query.message.chat.id,
                     photo=QR_PIC,
                     caption=(
-                        f"👋 **Hello {name}**\n\n"
-                        f"🎖️ **Available Plans :**\n\n"
-                        f"● `{PRICE1}`  For 3 Days Prime Membership\n\n"
-                        f"● `{PRICE2}`  For 7 Days Prime Membership\n\n"
-                        f"● `{PRICE3}`  For 1 Month Prime Membership\n\n"
-                        f"● `{PRICE4}`  For 2 Months Prime Membership\n\n"
-                        f"● `{PRICE5}`  For 3 Months Prime Membership\n\n\n"
-                        f"💵 **Pay via UPI:** `<code>{UPI_ID}</code>`\n\n"
-                        f"♻️ After payment, send screenshot to admin\n\n"
-                        f"‼️ Contact admin for custom plans"
-                    ),
-                    reply_markup=InlineKeyboardMarkup(
-                        [
-                            [InlineKeyboardButton("👤 Contact Admin", url=SCREENSHOT_URL)],
-                            [InlineKeyboardButton("🔒 Close", callback_data="close")]
+                        f"👋 Hello {name}\n\n"
+                        f"🎖️ Available Plans :\n\n"
+                        f"● {PRICE1}  For 3 Days Prime Membership\n\n"
+                        f"● {PRICE2}  For 7 Days Prime Membership\n\n"
+                        f"● {PRICE3}  For 1 Month Prime Membership\n\n"
+                        f"● {PRICE4}  For 2 Months Prime Membership\n\n"
+                        f"● {PRICE5}  For 3 Months Prime Membership\n\n\n"
+                        f"💵 Pay via UPI: <code>{UPI_ID}</code>\n\n"
+                        f"♻️ After Payment You Will Get Instant Membership\n\n"
+                        f"‼️ Must Send Screenshot after payment & If anyone want custom time membrship then ask admin"
+                ),
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [InlineKeyboardButton("👤 ADMIN 24/7", url=SCREENSHOT_URL)],
+                        [InlineKeyboardButton("🔒 Close", callback_data="close")]
                         ]
                     )
                 )
