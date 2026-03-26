@@ -129,7 +129,7 @@ USER_REPLY_TEXT = "ʙᴀᴋᴋᴀ ! ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴍʏ ꜱᴇɴᴘ
 OWNER_TAG = os.environ.get("OWNER_TAG", "@CallOwner_Bot")
 UPI_ID = os.environ.get("UPI_ID", "17273797@jio")
 QR_PIC = os.environ.get("QR_PIC", "https://telegra.ph/file/3e83c69804826b3cba066-16cffa90cd682570da.jpg")
-SCREENSHOT_URL = os.environ.get("SCREENSHOT_URL", "@CallOwner_Bot")
+SCREENSHOT_URL = os.environ.get("SCREENSHOT_URL", "http://t.me/spk_links")
 #--------------------------------------------
 #Time and its price
 #3 Days
