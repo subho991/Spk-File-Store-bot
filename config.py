@@ -137,11 +137,11 @@ PRICE1 = os.environ.get("PRICE1", "15 rs")
 #7 Days
 PRICE2 = os.environ.get("PRICE2", "30 rs")
 #1 Month
-PRICE3 = os.environ.get("PRICE3", "60 rs")
+PRICE3 = os.environ.get("PRICE3", "100 rs")
 #2 Month
-PRICE4 = os.environ.get("PRICE4", "90 rs")
+PRICE4 = os.environ.get("PRICE4", "160 rs")
 #3 Month
-PRICE5 = os.environ.get("PRICE5", "120 rs")
+PRICE5 = os.environ.get("PRICE5", "210 rs")
 
 #===================(END)========================#
 
