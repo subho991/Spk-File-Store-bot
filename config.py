@@ -50,8 +50,8 @@ TUT_VID = os.environ.get("TUT_VID","")
 #--------------------------------------------
 
 #--------------------------------------------
-HELP_TXT = "<b><blockquote>ᴛʜɪs ɪs ᴀɴ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ ᴡᴏʀᴋ ғᴏʀ @spklinks\n\n❏ ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅs\n├/start : sᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ\n├/myplan : ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴘʀᴇᴍɪᴜᴍ sᴛᴀᴛᴜs\n└@CallOwner_Bot : ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ᴛᴏ ɢᴇᴛ Membership\n\n sɪᴍᴘʟʏ ᴄʟɪᴄᴋ ᴏɴ ʟɪɴᴋ ᴀɴᴅ sᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ ᴊᴏɪɴ ʙᴏᴛʜ ᴄʜᴀɴɴᴇʟs ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ ᴛʜᴀᴛs ɪᴛ.....!\n\n ᴅᴇᴠᴇʟᴏᴘᴇᴅ ʙʏ <a href=https://t.me/spk_links>SPK</a></blockquote></b>"
-ABOUT_TXT = "<b><blockquote>◈ ᴄʀᴇᴀᴛᴏʀ: <a href=https://t.me/spk_links>SPK</a>\n◈ ꜰᴏᴜɴᴅᴇʀ ᴏꜰ : <a href=https://t.me/spk_links> 𝚂𝙿𝙺 𝙻𝙸𝙽𝙺𝚂 </a>\n◈ ᴀɴɪᴍᴇ ᴄʜᴀɴɴᴇʟ : <a href=https://t.me/spk_links>ᴀɴɪᴍᴇ ᴄʀᴜɪsᴇ</a>\n◈ ᴀᴅᴜʟᴛ ᴄʜᴀɴɴᴇʟ : <a href=https://t.me/spk_links>𝚂𝙿𝙺 𝙻𝙸𝙽𝙺𝚂</a>\n◈ ᴀᴅᴜʟᴛ ᴍᴀɴɢᴀ : <a href=https://t.me/spk_links>ʜᴇɴᴛᴀɪ ᴍᴀɴɢᴀ</a>\n◈ ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href=https://t.me/spk_links>SPK</a></blockquote></b>"
+HELP_TXT = "<b><blockquote>ᴛʜɪs ɪs ᴀɴ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ ᴡᴏʀᴋ ғᴏʀ @spklinks\n\n❏ ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅs\n├/start : sᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ\n├/myplan : ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴘʀᴇᴍɪᴜᴍ sᴛᴀᴛᴜs\n└@CallOwner_Bot : ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ᴛᴏ ɢᴇᴛ ᴍᴇᴍʙᴇʀsʜɪᴘ\n\n sɪᴍᴘʟʏ ᴄʟɪᴄᴋ ᴏɴ ʟɪɴᴋ ᴀɴᴅ sᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ ᴊᴏɪɴ ʙᴏᴛʜ ᴄʜᴀɴɴᴇʟs ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ ᴛʜᴀᴛs ɪᴛ.....!\n\n ᴅᴇᴠᴇʟᴏᴘᴇᴅ ʙʏ <a href=https://t.me/spklinks>SPK</a></blockquote></b>"
+ABOUT_TXT = "<b><blockquote>◈ ᴄʀᴇᴀᴛᴏʀ: <a href=https://t.me/spklinks>SPK</a>\n◈ ꜰᴏᴜɴᴅᴇʀ ᴏꜰ : <a href=https://t.me/spk_links> 𝚂𝙿𝙺 𝙻𝙸𝙽𝙺𝚂 </a>\n◈ ᴀɴɪᴍᴇ ᴄʜᴀɴɴᴇʟ : <a href=https://t.me/spklinks>ᴀɴɪᴍᴇ ᴄʀᴜɪsᴇ</a>\n◈ ᴀᴅᴜʟᴛ ᴄʜᴀɴɴᴇʟ : <a href=https://t.me/spklinks>𝚂𝙿𝙺 𝙻𝙸𝙽𝙺𝚂</a>\n◈ ᴀᴅᴜʟᴛ ᴍᴀɴɢᴀ : <a href=https://t.me/spklinks>ʜᴇɴᴛᴀɪ ᴍᴀɴɢᴀ</a>\n◈ ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href=https://t.me/spklinks>SPK</a></blockquote></b>"
 #--------------------------------------------
 #--------------------------------------------
 START_MSG = os.environ.get("START_MESSAGE", "<b>ʜᴇʟʟᴏ {mention}\n\n<blockquote> ɪ ᴀᴍ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ, ɪ ᴄᴀɴ sᴛᴏʀᴇ ᴘʀɪᴠᴀᴛᴇ ғɪʟᴇs ɪɴ sᴘᴇᴄɪғɪᴇᴅ ᴄʜᴀɴɴᴇʟ ᴀɴᴅ ᴏᴛʜᴇʀ ᴜsᴇʀs ᴄᴀɴ ᴀᴄᴄᴇss ɪᴛ ғʀᴏᴍ sᴘᴇᴄɪᴀʟ ʟɪɴᴋ.</blockquote></b>")
@@ -139,9 +139,9 @@ PRICE2 = os.environ.get("PRICE2", "30 rs")
 #1 Month
 PRICE3 = os.environ.get("PRICE3", "100 rs")
 #2 Month
-PRICE4 = os.environ.get("PRICE4", "160 rs")
+PRICE4 = os.environ.get("PRICE4", "170 rs")
 #3 Month
-PRICE5 = os.environ.get("PRICE5", "210 rs")
+PRICE5 = os.environ.get("PRICE5", "250 rs")
 
 #===================(END)========================#
 
