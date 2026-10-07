@@ -103,7 +103,7 @@ async def start_command(client: Client, message: Message):
                 ]
                 return await temp.edit(
                     f"⚠️ <b>Token verification required</b>\n\n"
-                    f"⚡ Verification takes less than 2 minutes\n\n"
+                    f"⚡ Verification takes less than 1 minutes\n\n"
                     f"🔍 <b>What is token verification?</b>\n\n"
                     f"📝 This is an <b>Ads Token</b>. Passing one ad allows you to use the bot for "
                     f"<b>{get_exp_time(VERIFY_EXPIRE)}</b>\n\n"
@@ -221,7 +221,7 @@ async def start_command(client: Client, message: Message):
     else:
         reply_markup = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("• ᴄʜᴀɴɴᴇʟs •", url="https://t.me/spk_links")],
+                [InlineKeyboardButton("• ᴄʜᴀɴɴᴇʟs •", url="https://t.me/spklinks")],
                 [
                     InlineKeyboardButton("• ᴀʙᴏᴜᴛ", callback_data="about"),
                     InlineKeyboardButton("ʜᴇʟᴘ •", callback_data="help")
